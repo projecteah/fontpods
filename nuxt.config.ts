@@ -28,7 +28,7 @@ export default defineNuxtConfig({
 		},
 	},
 	devServer: {
-		port: '1420',
+		port: 1420,
 	},
 	router: {
 		options: {
@@ -37,6 +37,14 @@ export default defineNuxtConfig({
 	},
 	nitro: {
 		preset: 'static',
+	},
+	dir: {
+		modules: 'app/modules',
+	},
+	icon: {
+		clientBundle: {
+			scan: true,
+		},
 	},
 	ui: {
 		fonts: false,

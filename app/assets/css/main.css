@@ -1,2 +1,17 @@
 @import 'tailwindcss';
 @import '@nuxt/ui';
+
+:root {
+	--ui-header-height: 2.5rem;
+}
+
+@layer base {
+	* {
+		@apply border-default select-none selection:bg-primary/50;
+		scrollbar-width: thin;
+	}
+	html,
+	body {
+		text-autospace: normal;
+	}
+}
