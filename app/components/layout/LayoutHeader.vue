@@ -30,7 +30,7 @@ async function handleWindowDrag(event: MouseEvent) {
 
 <template>
 	<div
-		class="sticky top-0 z-50 flex h-(--ui-header-height) items-center justify-between bg-default pl-2 select-none"
+		class="sticky top-0 z-50 flex h-(--ui-header-height) items-center justify-between border-b bg-default pl-2"
 		@mousedown="handleWindowDrag"
 	>
 		<section class="flex h-full items-center gap-0.5">

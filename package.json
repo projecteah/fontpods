@@ -23,6 +23,7 @@
 		"vue-router": "^5.1.0"
 	},
 	"devDependencies": {
+		"@iconify-json/ph": "^1.2.2",
 		"@nuxtjs/i18n": "^10.4.0",
 		"@tauri-apps/cli": "^2.11.3",
 		"@types/node": "^26.0.1",

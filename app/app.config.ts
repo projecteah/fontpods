@@ -22,6 +22,12 @@ export default defineAppConfig({
 				root: 'w-full',
 			},
 		},
+		inputMenu: {
+			slots: {
+				root: 'w-full',
+				content: 'min-w-fit',
+			},
+		},
 		textarea: {
 			slots: {
 				root: 'w-full',
@@ -37,6 +43,28 @@ export default defineAppConfig({
 		navigationMenu: {
 			slots: {
 				link: 'cursor-pointer',
+			},
+		},
+		tabs: {
+			compoundVariants: [
+				{
+					color: 'neutral',
+					variant: 'pill',
+					class: {
+						indicator: 'bg-default',
+						trigger: [
+							'data-[state=active]:text-default outline-default/25 focus-visible:outline-3',
+							'in-[[data-slot=list]:not(:has([data-slot=indicator]))]:data-[state=active]:before:bg-default',
+						],
+					},
+				},
+			],
+		},
+		sidebar: {
+			slots: {
+				gap: 'h-[calc(100%-var(--ui-header-height))]',
+				container:
+					'absolute top-(--ui-header-height) bottom-0 h-[calc(100%-var(--ui-header-height))]',
 			},
 		},
 		icons: {
@@ -85,6 +113,10 @@ export default defineAppConfig({
 			warning: 'i-ph-warning',
 			// app extend
 			square: 'i-ph-square',
+			reset: 'i-ph-arrow-counter-clockwise',
+			refresh: 'i-ph-arrows-clockwise',
+			rows: 'i-ph-rows',
+			grid: 'i-ph-grid-nine',
 		},
 	},
 })
