@@ -1,7 +1,7 @@
 import { locales } from './i18n/locales'
 
 export default defineNuxtConfig({
-	modules: ['@vueuse/nuxt', '@nuxt/ui', '@nuxtjs/i18n'],
+	modules: ['@vueuse/nuxt', '@nuxt/ui', '@nuxtjs/i18n', '@pinia/nuxt'],
 	app: {
 		pageTransition: {
 			name: 'page',
