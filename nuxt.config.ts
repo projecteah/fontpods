@@ -1,5 +1,7 @@
+import { locales } from './i18n/locales'
+
 export default defineNuxtConfig({
-	modules: ['@vueuse/nuxt', '@nuxt/ui'],
+	modules: ['@vueuse/nuxt', '@nuxt/ui', '@nuxtjs/i18n'],
 	app: {
 		pageTransition: {
 			name: 'page',
@@ -9,6 +11,11 @@ export default defineNuxtConfig({
 			name: 'layout',
 			mode: 'out-in',
 		},
+	},
+	i18n: {
+		strategy: 'no_prefix',
+		defaultLocale: 'en',
+		locales,
 	},
 	css: ['@/assets/css/main.css'],
 	ssr: false,
