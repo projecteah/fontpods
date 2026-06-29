@@ -1,7 +1,10 @@
 import type { Pinia } from 'pinia'
 import { TauriPluginPinia } from '@tauri-store/pinia'
+import { createPersistedState } from 'pinia-plugin-persistedstate'
 
-// See: https://pinia.vuejs.org/core-concepts/plugins.html#Nuxt-js
 export default defineNuxtPlugin(({ $pinia }) => {
-	;($pinia as Pinia).use(TauriPluginPinia())
+	const pinia = $pinia as Pinia
+
+	if (isTauri) pinia.use(TauriPluginPinia())
+	pinia.use(createPersistedState())
 })

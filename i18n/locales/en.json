@@ -1,1 +1,41 @@
-{}
+{
+	"font": {
+		"count": "{count} / {total} fonts",
+		"refresh": "Refresh",
+		"reset": "Reset",
+		"search": "Search fonts…",
+		"add": "Add",
+		"preview": "Preview",
+		"previewPlaceholder": "The quick brown fox jumps over the lazy dog.",
+		"fontSize": "Font Size",
+		"filter": "Filter",
+		"layout": {
+			"rows": "List",
+			"grid": "Grid"
+		},
+		"source": {
+			"all": "All",
+			"local": "Local",
+			"web": "Web",
+			"favorites": "Favorites"
+		},
+		"favorite": "Favorite",
+		"styles": "{count} styles",
+		"empty": {
+			"unsupported": {
+				"title": "Current browser not supported",
+				"description": "Listing local fonts is only available in Chromium-based desktop browsers version 103 and above (e.g., Google Chrome and Microsoft Edge). Firefox and Safari are currently not supported.",
+				"action": "Learn more"
+			},
+			"permission": {
+				"title": "Please grant access to local fonts",
+				"description": "Permission is required to access the fonts installed on this device. Your font data will never leave your local machine.",
+				"grant": "Grant Permission"
+			},
+			"empty": {
+				"title": "No fonts found",
+				"description": "No fonts match the current filter criteria. Please try adjusting your search or source."
+			}
+		}
+	}
+}

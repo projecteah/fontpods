@@ -16,9 +16,11 @@ export const locales: LocaleObject[] = [
 	{
 		code: 'zh-TW',
 		file: 'zh-tw.json',
-		language: 'zh-Hans-TW',
+		language: 'zh-Hant-TW',
 		name: '繁體中文',
 	},
 ]
 
-export const currentLocales = [...locales].sort((a, b) => a.code.localeCompare(b.code))
+export const availableLocales = [...locales].sort((a, b) => a.code.localeCompare(b.code))
+
+export type AvailableLocales = (typeof locales)[number]['code']

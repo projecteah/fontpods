@@ -2,36 +2,55 @@
 import type { TabsItem } from '@nuxt/ui'
 
 const appConfig = useAppConfig()
-const icons = appConfig.ui.icons
 
-const previewLayout = ref<TabsItem[]>([
+const fontStore = useFontStore()
+const fontListStore = useFontListStore()
+const { filteredFonts, loadFonts, loading } = useFont()
+
+const { search, previewText, fontSize } = storeToRefs(fontListStore)
+
+const layout = computed({
+	get: () => fontListStore.layout,
+	set: (v: string | number) => {
+		fontListStore.layout = v as FontLayout
+	},
+})
+
+const filterSource = computed({
+	get: () => fontListStore.filterSource,
+	set: (v: string | number) => {
+		fontListStore.filterSource = v as FontFilterSource
+	},
+})
+
+const previewLayout = computed<TabsItem[]>(() => [
 	{
-		label: 'Rows',
-		icon: icons.rows,
+		label: $t('font.layout.rows'),
+		icon: appConfig.ui.icons.rows,
 		value: 'row',
 	},
 	{
-		label: 'Grid',
-		icon: icons.grid,
+		label: $t('font.layout.grid'),
+		icon: appConfig.ui.icons.grid,
 		value: 'grid',
 	},
 ])
 
-const filterSourceItems = ref<TabsItem[]>([
+const filterSourceItems = computed<TabsItem[]>(() => [
 	{
-		label: 'All',
+		label: $t('font.source.all'),
 		value: 'all',
 	},
 	{
-		label: 'Local',
+		label: $t('font.source.local'),
 		value: 'local',
 	},
 	{
-		label: 'Web',
+		label: $t('font.source.web'),
 		value: 'web',
 	},
 	{
-		label: 'Favorites',
+		label: $t('font.source.favorites'),
 		value: 'favorites',
 	},
 ])
@@ -42,17 +61,39 @@ const filterSourceItems = ref<TabsItem[]>([
 		<div class="flex h-full flex-col gap-4">
 			<div class="flex w-full flex-col gap-2">
 				<div class="flex items-center justify-between">
-					<span class="text-sm">114 of 514 fonts</span>
-					<UTooltip text="Refresh">
-						<UButton :icon="icons.refresh" color="neutral" variant="ghost" size="xs" />
+					<span class="text-sm">{{
+						$t('font.count', {
+							count: filteredFonts.length,
+							total: fontStore.totalCount,
+						})
+					}}</span>
+					<UTooltip :text="$t('font.refresh')">
+						<UButton
+							:icon="appConfig.ui.icons.refresh"
+							color="neutral"
+							variant="ghost"
+							size="xs"
+							:loading="loading"
+							@click="loadFonts"
+						/>
 					</UTooltip>
 				</div>
-				<UInput :icon="icons.search" placeholder="Search..." />
+				<UInput
+					v-model="search"
+					:icon="appConfig.ui.icons.search"
+					:placeholder="$t('font.search')"
+				/>
 				<div class="flex min-w-full gap-2">
-					<UTabs :items="previewLayout" color="neutral" size="sm" :content="false" />
+					<UTabs
+						v-model="layout"
+						:items="previewLayout"
+						color="neutral"
+						size="sm"
+						:content="false"
+					/>
 					<UButton
-						:icon="icons.plus"
-						label="Add"
+						:icon="appConfig.ui.icons.plus"
+						:label="$t('font.add')"
 						color="neutral"
 						variant="soft"
 						size="sm"
@@ -62,28 +103,47 @@ const filterSourceItems = ref<TabsItem[]>([
 			</div>
 			<USeparator />
 			<div class="flex flex-col gap-2">
-				<UFormField label="Preview">
+				<UFormField :label="$t('font.preview')">
 					<UTextarea
-						placeholder="The quick brown fox jumps over the lazy dog."
+						v-model="previewText"
+						:placeholder="$t('font.previewPlaceholder')"
 						:rows="2"
 						autoresize
 					/>
 					<template #hint>
-						<UTooltip text="Reset">
-							<UButton :icon="icons.reset" color="neutral" variant="ghost" size="xs" />
+						<UTooltip :text="$t('font.reset')">
+							<UButton
+								:icon="appConfig.ui.icons.reset"
+								color="neutral"
+								variant="ghost"
+								size="xs"
+								@click="fontListStore.resetPreview"
+							/>
 						</UTooltip>
 					</template>
 				</UFormField>
-				<UFormField label="Font size" orientation="horizontal">
-					<FontSizeInput class="max-w-26" />
+				<UFormField :label="$t('font.fontSize')" orientation="horizontal">
+					<FontSizeInput v-model="fontSize" class="max-w-26" />
 				</UFormField>
 			</div>
 			<USeparator />
-			<UFormField label="Filter">
-				<UTabs :items="filterSourceItems" color="neutral" size="sm" :content="false" />
+			<UFormField :label="$t('font.filter')">
+				<UTabs
+					v-model="filterSource"
+					:items="filterSourceItems"
+					color="neutral"
+					size="sm"
+					:content="false"
+				/>
 				<template #hint>
-					<UTooltip text="Reset">
-						<UButton :icon="icons.reset" color="neutral" variant="ghost" size="xs" />
+					<UTooltip :text="$t('font.reset')">
+						<UButton
+							:icon="appConfig.ui.icons.reset"
+							color="neutral"
+							variant="ghost"
+							size="xs"
+							@click="fontListStore.resetFilter"
+						/>
 					</UTooltip>
 				</template>
 			</UFormField>

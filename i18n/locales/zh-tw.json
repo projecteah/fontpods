@@ -1,1 +1,41 @@
-{}
+{
+	"font": {
+		"count": "{count} / {total} 個字型",
+		"refresh": "重新整理",
+		"reset": "重設",
+		"search": "搜尋字型…",
+		"add": "添加",
+		"preview": "預覽",
+		"previewPlaceholder": "敏捷的棕色狐狸躍過那隻懶狗。",
+		"fontSize": "字級",
+		"filter": "篩選",
+		"layout": {
+			"rows": "列表",
+			"grid": "網格"
+		},
+		"source": {
+			"all": "全部",
+			"local": "本機",
+			"web": "網路",
+			"favorites": "收藏"
+		},
+		"favorite": "收藏",
+		"styles": "{count} 種樣式",
+		"empty": {
+			"unsupported": {
+				"title": "不支援目前瀏覽器",
+				"description": "列出本機字型僅在基於 Chromium 103 及以上版本的桌面端瀏覽器中可用（如 Google Chrome 與 Microsoft Edge），暫不支援 Firefox 與 Safari。",
+				"action": "瞭解更多"
+			},
+			"permission": {
+				"title": "請授權存取本機字型",
+				"description": "需要獲得權限才能訪問此裝置上安裝的字型，你的字型資料絕不會離開本機。",
+				"grant": "授予權限"
+			},
+			"empty": {
+				"title": "未找到字型",
+				"description": "沒有字型符合目前篩選條件，請嘗試調整搜尋或來源。"
+			}
+		}
+	}
+}

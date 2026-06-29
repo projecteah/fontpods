@@ -48,6 +48,9 @@ export default defineNuxtConfig({
 	dir: {
 		modules: 'app/modules',
 	},
+	imports: {
+		dirs: ['types'],
+	},
 	icon: {
 		clientBundle: {
 			scan: true,

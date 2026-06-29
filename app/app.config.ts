@@ -117,6 +117,8 @@ export default defineAppConfig({
 			refresh: 'i-ph-arrows-clockwise',
 			rows: 'i-ph-rows',
 			grid: 'i-ph-grid-nine',
+			text: 'i-ph-text-t',
+			starFill: 'i-ph-star-fill',
 		},
 	},
 })

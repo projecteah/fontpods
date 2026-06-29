@@ -1,1 +1,41 @@
-{}
+{
+	"font": {
+		"count": "{count} / {total} 个字体",
+		"refresh": "刷新",
+		"reset": "重置",
+		"search": "搜索字体…",
+		"add": "添加",
+		"preview": "预览",
+		"previewPlaceholder": "敏捷的棕色狐狸跃过那只懒狗。",
+		"fontSize": "字号",
+		"filter": "筛选",
+		"layout": {
+			"rows": "列表",
+			"grid": "网格"
+		},
+		"source": {
+			"all": "全部",
+			"local": "本地",
+			"web": "网络",
+			"favorites": "收藏"
+		},
+		"favorite": "收藏",
+		"styles": "{count} 种样式",
+		"empty": {
+			"unsupported": {
+				"title": "不支持当前浏览器",
+				"description": "列出本地字体仅在基于 Chromium 103 及以上版本的桌面端浏览器中可用（如 Google Chrome 与 Microsoft Edge），暂不支持 Firefox 与 Safari。",
+				"action": "了解更多"
+			},
+			"permission": {
+				"title": "请授权访问本地字体",
+				"description": "需要获得权限才能访问此设备上安装的字体，你的字体数据绝不会离开本机。",
+				"grant": "授予权限"
+			},
+			"empty": {
+				"title": "未找到字体",
+				"description": "没有字体符合当前筛选条件，请尝试调整搜索或来源。"
+			}
+		}
+	}
+}
