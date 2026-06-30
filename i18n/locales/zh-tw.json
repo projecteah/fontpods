@@ -1,4 +1,8 @@
 {
+	"header": {
+		"back": "返回",
+		"openAppMenu": "開啟應用選單"
+	},
 	"font": {
 		"count": "{count} / {total} 個字型",
 		"refresh": "重新整理",
@@ -37,5 +41,8 @@
 				"description": "沒有字型符合目前篩選條件，請嘗試調整搜尋或來源。"
 			}
 		}
+	},
+	"settings": {
+		"label": "設定"
 	}
 }

@@ -1,4 +1,8 @@
 {
+	"header": {
+		"back": "Back",
+		"openAppMenu": "Open App Menu"
+	},
 	"font": {
 		"count": "{count} / {total} fonts",
 		"refresh": "Refresh",
@@ -7,7 +11,7 @@
 		"add": "Add",
 		"preview": "Preview",
 		"previewPlaceholder": "The quick brown fox jumps over the lazy dog.",
-		"fontSize": "Font Size",
+		"fontSize": "Font size",
 		"filter": "Filter",
 		"layout": {
 			"rows": "List",
@@ -37,5 +41,8 @@
 				"description": "No fonts match the current filter criteria. Please try adjusting your search or source."
 			}
 		}
+	},
+	"settings": {
+		"label": "Settings"
 	}
 }

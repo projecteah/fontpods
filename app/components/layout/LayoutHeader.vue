@@ -1,5 +1,17 @@
 <script setup lang="ts">
+import type { DropdownMenuItem } from '@nuxt/ui'
+
 const appConfig = useAppConfig()
+
+const dropdownItems = computed<DropdownMenuItem[][]>(() => [
+	[
+		{
+			label: $t('settings.label'),
+			icon: appConfig.ui.icons.settings,
+			to: appConfig.routes.settings,
+		},
+	],
+])
 
 async function handleWindowDrag(event: MouseEvent) {
 	if (!isTauri) return
@@ -33,7 +45,22 @@ async function handleWindowDrag(event: MouseEvent) {
 		class="sticky top-0 z-50 flex h-(--ui-header-height) items-center justify-between border-b bg-default pl-2"
 		@mousedown="handleWindowDrag"
 	>
-		<section class="flex h-full items-center gap-0.5">
+		<section class="flex h-full items-center gap-2">
+			<div class="flex items-center">
+				<UTooltip v-if="$route.path !== '/'" :text="$t('header.back')">
+					<UButton
+						:icon="appConfig.ui.icons.arrowLeft"
+						color="neutral"
+						variant="ghost"
+						@click="navigateTo('/')"
+					/>
+				</UTooltip>
+				<UDropdownMenu :items="dropdownItems">
+					<UTooltip :text="$t('header.openAppMenu')">
+						<UButton :icon="appConfig.ui.icons.menu" color="neutral" variant="ghost" />
+					</UTooltip>
+				</UDropdownMenu>
+			</div>
 			<span class="text-sm">{{ appConfig.app.name }}</span>
 		</section>
 

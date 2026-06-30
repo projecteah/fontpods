@@ -61,12 +61,14 @@ const filterSourceItems = computed<TabsItem[]>(() => [
 		<div class="flex h-full flex-col gap-4">
 			<div class="flex w-full flex-col gap-2">
 				<div class="flex items-center justify-between">
-					<span class="text-sm">{{
-						$t('font.count', {
-							count: filteredFonts.length,
-							total: fontStore.totalCount,
-						})
-					}}</span>
+					<span class="text-sm">
+						{{
+							$t('font.count', {
+								count: filteredFonts.length,
+								total: fontStore.totalCount,
+							})
+						}}
+					</span>
 					<UTooltip :text="$t('font.refresh')">
 						<UButton
 							:icon="appConfig.ui.icons.refresh"

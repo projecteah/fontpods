@@ -1,7 +1,9 @@
 <template>
 	<UApp>
-		<NuxtLayout>
+		<LayoutHeader />
+
+		<main class="h-[calc(100vh-var(--ui-header-height))]">
 			<NuxtPage />
-		</NuxtLayout>
+		</main>
 	</UApp>
 </template>

@@ -2,6 +2,9 @@ export default defineAppConfig({
 	app: {
 		name: 'FontPods',
 	},
+	routes: {
+		settings: '/settings',
+	},
 	ui: {
 		colors: {
 			primary: 'blue',
@@ -119,6 +122,7 @@ export default defineAppConfig({
 			grid: 'i-ph-grid-nine',
 			text: 'i-ph-text-t',
 			starFill: 'i-ph-star-fill',
+			settings: 'i-ph-gear-fine',
 		},
 	},
 })

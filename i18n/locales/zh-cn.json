@@ -1,4 +1,8 @@
 {
+	"header": {
+		"back": "返回",
+		"openAppMenu": "打开应用菜单"
+	},
 	"font": {
 		"count": "{count} / {total} 个字体",
 		"refresh": "刷新",
@@ -37,5 +41,8 @@
 				"description": "没有字体符合当前筛选条件，请尝试调整搜索或来源。"
 			}
 		}
+	},
+	"settings": {
+		"label": "设置"
 	}
 }
